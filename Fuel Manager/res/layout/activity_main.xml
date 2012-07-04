@@ -1,141 +1,147 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
+    android:id="@+id/scroll_view_id"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
 
     <LinearLayout
-        android:id="@+id/vehicle_type_linear_id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/vehicle_label_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="@string/vehicle_text"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:width="120dp" />
-
-        <Spinner
-            android:id="@+id/vehicle_type_spin_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@android:layout/simple_spinner_item" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/model_linear_id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/model_label_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="@string/model_text"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:width="120dp" />
-
-        <Spinner
-            android:id="@+id/model_spin_id"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/fuel_type_linear_id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/fuel_type_label_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="@string/fuel_type_text"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:width="120dp" />
-
-        <Spinner
-            android:id="@+id/fuel_type_spin_id"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/make_linear_id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/make_label_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="@string/make_text"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:width="120dp" />
-
-        <Spinner
-            android:id="@+id/make_spin_id"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/fuel_rate_linear_id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/fuel_rate_label_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="@string/fuel_rate_text"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:width="120dp" />
-
-        <EditText
-            android:id="@+id/fuel_rate_id"
+        <LinearLayout
+            android:id="@+id/vehicle_type_linear_id"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberDecimal|numberSigned" />
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/vehicle_label_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/vehicle_text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:width="120dp" />
+
+            <Spinner
+                android:id="@+id/vehicle_type_spin_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@android:layout/simple_spinner_item" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/model_linear_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/model_label_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/model_text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:width="120dp" />
+
+            <Spinner
+                android:id="@+id/model_spin_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fuel_type_linear_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/fuel_type_label_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/fuel_type_text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:width="120dp" />
+
+            <Spinner
+                android:id="@+id/fuel_type_spin_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/make_linear_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/make_label_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/make_text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:width="120dp" />
+
+            <Spinner
+                android:id="@+id/make_spin_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fuel_rate_linear_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/fuel_rate_label_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/fuel_rate_text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:width="120dp" />
+
+            <EditText
+                android:id="@+id/fuel_rate_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal|numberSigned" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cancel_save_layout_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="fill_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/save_btn_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/save_btn_text"
+                android:width="120dp" />
+
+            <Button
+                android:id="@+id/cancel_btn_id"
+                android:layout_width="158dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel_btn_text"
+                android:width="120dp" />
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/cancel_save_layout_id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:gravity="fill_horizontal"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/save_btn_id"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/save_btn_text"
-            android:width="120dp" />
-
-        <Button
-            android:id="@+id/cancel_btn_id"
-            android:layout_width="158dp"
-            android:layout_height="wrap_content"
-            android:text="@string/cancel_btn_text"
-            android:width="120dp" />
-    </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

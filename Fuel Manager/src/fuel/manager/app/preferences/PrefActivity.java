@@ -10,16 +10,22 @@ import android.widget.Spinner;
 import fuel.manager.R;
 
 public class PrefActivity extends Activity {
-
-	String[] vehicle_type_list = { "Car - 4 Wheeler", "Motor Bike - 2 Wheeler" };
-
+	SpinnerHandler spinnerHandler = null;
+	Spinner spinner = null;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		Spinner vehicle_type_spin = (Spinner) findViewById(R.id.vehicle_type_spin_id);
-		VehicleType vehicleType = new VehicleType();
-		vehicleType.initVehicleTypeSpinner(vehicle_type_spin, this);		
+		spinnerHandler = new SpinnerHandler();
+		spinner = (Spinner) findViewById(R.id.vehicle_type_spin_id);		
+		spinnerHandler.populateSpinner(spinner, this);
+		spinner = (Spinner) findViewById(R.id.fuel_type_spin_id);		
+		spinnerHandler.populateSpinner(spinner, this);
+		spinner = (Spinner) findViewById(R.id.make_spin_id);		
+		spinnerHandler.populateSpinner(spinner, this);
+		spinner = (Spinner) findViewById(R.id.model_spin_id);		
+		spinnerHandler.populateSpinner(spinner, this);
+
 	}
 
 	@Override
