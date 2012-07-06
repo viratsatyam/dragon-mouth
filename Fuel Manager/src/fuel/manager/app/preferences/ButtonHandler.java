@@ -2,32 +2,38 @@ package fuel.manager.app.preferences;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.Spinner;
 import fuel.manager.R;
-
 
 public class ButtonHandler implements View.OnClickListener {
 
-	private Context activityContext = null;
+	private PrefActivity prefActivity = null;
+	public ButtonHandler(PrefActivity prefActivity) {
+		this.prefActivity = prefActivity;
+	}
 	@Override
 	public void onClick(View view) {
-		System.out.println("ID: " + view.getId());
+
+		Spinner spin = null;
+		String item = null;
 		if (view.getId() == R.id.save_btn_id) {
-
-			Builder alert = new AlertDialog.Builder(getActivityContext());
-			alert.setTitle("Save Data");
-			alert.setMessage("Saved !! ");
-			alert.setNeutralButton("Close", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dlg, int sumthin) {
-					//Go to report screen
-				}
-			});
-
+			spin = (Spinner) prefActivity
+					.findViewById(R.id.vehicle_type_spin_id);
+			item = spin.getSelectedItem().toString();
+			Builder alert = new AlertDialog.Builder(prefActivity);
+			alert.setTitle("Selected item");
+			alert.setMessage(item);
+			alert.setNeutralButton("Close", null);
 			alert.show();
+
+//			ContentValues values = new ContentValues();
+//		    values.put("v_type", R.id.vehicle_type_spin_idcontact.getName()); // Contact Name
+//		    values.put(KEY_PH_NO, contact.getPhoneNumber()); // Contact Phone Number
+//		    
+			
+		   
 		}
 
 	}
@@ -36,13 +42,4 @@ public class ButtonHandler implements View.OnClickListener {
 		button.setOnClickListener(this);
 
 	}
-
-	Context getActivityContext() {
-		return activityContext;
 	}
-
-	void setActivityContext(Context activityContext) {
-		this.activityContext = activityContext;
-	}
-
-}

@@ -1,7 +1,7 @@
 package fuel.manager.app.preferences;
 
-import android.app.Application;
-import android.content.Context;
+
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -9,7 +9,7 @@ import android.widget.Spinner;
 import fuel.manager.R;
 
 public class SpinnerHandler implements AdapterView.OnItemSelectedListener {
-	private Context activityContext = null;
+	private PrefActivity  prefActivity = null;
 	ArrayAdapter<String> aa = null;
 	String[] vehicle_type_list = { "Car - 4 Wheeler", "Motor Bike - 2 Wheeler" };
 	String[] model_list = { "Tata Indica eV2", "Maruti WagonR",
@@ -18,20 +18,21 @@ public class SpinnerHandler implements AdapterView.OnItemSelectedListener {
 			"Chevrolet Beat", "Maruti Eeco", "Ford Figo" };
 	String[] make_list = null;
 	String[] fuel_type_list = { "Patrol", "Diesel", "CNG" };
-
-	// String[] = { "Car - 4 Wheeler", "Motor Bike - 2 Wheeler" };
-
+	
+	public SpinnerHandler(PrefActivity prefActivity){
+		this.prefActivity = prefActivity;
+	}
 	public void populateSpinner(Spinner spin) {
 		spin.setOnItemSelectedListener(this);
 		int spinId = spin.getId();
 		switch (spinId) {
 		case R.id.vehicle_type_spin_id:
-			aa = new ArrayAdapter<String>(activityContext,
+			aa = new ArrayAdapter<String>(prefActivity,
 					android.R.layout.simple_list_item_1, vehicle_type_list);
 			aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			break;
 		case R.id.fuel_type_spin_id:
-			aa = new ArrayAdapter<String>(activityContext,
+			aa = new ArrayAdapter<String>(prefActivity,
 					android.R.layout.simple_list_item_1, fuel_type_list);
 			aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			break;
@@ -40,12 +41,12 @@ public class SpinnerHandler implements AdapterView.OnItemSelectedListener {
 			for (int i = 1960, j = 0; i < 2013; i++, j++) {
 				make_list[j] = new String(String.valueOf(i));
 			}
-			aa = new ArrayAdapter<String>(activityContext,
+			aa = new ArrayAdapter<String>(prefActivity,
 					android.R.layout.simple_list_item_1, make_list);
 			aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			break;
 		case R.id.model_spin_id:
-			aa = new ArrayAdapter<String>(activityContext,
+			aa = new ArrayAdapter<String>(prefActivity,
 					android.R.layout.simple_list_item_1, model_list);
 			aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			break;
@@ -65,13 +66,5 @@ public class SpinnerHandler implements AdapterView.OnItemSelectedListener {
 	public void onNothingSelected(AdapterView<?> arg0) {
 		// TODO Auto-generated method stub
 
-	}
-
-	public Context getActivityContext() {
-		return activityContext;
-	}
-
-	public void setActivityContext(Context activityContext) {
-		this.activityContext = activityContext;
 	}
 }
