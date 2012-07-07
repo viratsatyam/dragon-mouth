@@ -1,7 +1,5 @@
 package fuel.manager.app.preferences;
 
-
-
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -9,19 +7,20 @@ import android.widget.Spinner;
 import fuel.manager.R;
 
 public class SpinnerHandler implements AdapterView.OnItemSelectedListener {
-	private PrefActivity  prefActivity = null;
+	private PrefActivity prefActivity = null;
 	ArrayAdapter<String> aa = null;
-	String[] vehicle_type_list = { "Car - 4 Wheeler", "Motor Bike - 2 Wheeler" };
+	String[] vehicle_type_list = { "Car ", "Motor Bike" };
 	String[] model_list = { "Tata Indica eV2", "Maruti WagonR",
 			"Hyundai Santro Xing", "Tata Indica eV2 Xeta", "Reva i",
 			"Tata Indica V2 Xeta LPG", "Maruti A Star", "Maruti Estilo",
 			"Chevrolet Beat", "Maruti Eeco", "Ford Figo" };
 	String[] make_list = null;
 	String[] fuel_type_list = { "Patrol", "Diesel", "CNG" };
-	
-	public SpinnerHandler(PrefActivity prefActivity){
+
+	public SpinnerHandler(PrefActivity prefActivity) {
 		this.prefActivity = prefActivity;
 	}
+
 	public void populateSpinner(Spinner spin) {
 		spin.setOnItemSelectedListener(this);
 		int spinId = spin.getId();
